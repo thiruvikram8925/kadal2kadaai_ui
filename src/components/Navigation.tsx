@@ -66,8 +66,8 @@ export default function Navigation({
       <header
         className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
           isNavbarWhite
-            ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-3'
-            : 'bg-transparent py-5'
+            ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-2'
+            : 'bg-transparent py-3.5'
         }`}
       >
         <div id="nav-container" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -79,16 +79,16 @@ export default function Navigation({
               onPageChange('home');
               onNavigate('home');
             }}
-            className="flex items-center gap-3 sm:gap-4 group cursor-pointer text-left"
+            className="flex items-center gap-2.5 sm:gap-3 group cursor-pointer text-left"
           >
-            <Logo className={`${isNavbarWhite ? 'h-20 w-20' : 'h-24 w-24 sm:h-28 sm:w-28'} shrink-0`} />
+            <Logo className={`${isNavbarWhite ? 'h-16 w-16' : 'h-20 w-20 sm:h-24 sm:w-24'} shrink-0`} />
             <div className="flex flex-col justify-center font-sans">
-              <span className={`font-serif text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight block uppercase ${
+              <span className={`font-serif text-lg sm:text-xl lg:text-2xl font-extrabold tracking-tight block uppercase ${
                 isNavbarWhite ? 'text-slate-900' : 'text-white'
               }`}>
                 Kadal 2 Kadaai
               </span>
-              <span className={`text-[9px] sm:text-[10px] tracking-widest uppercase block font-bold ${
+              <span className={`text-[8px] sm:text-[9px] tracking-widest uppercase block font-bold ${
                 isNavbarWhite ? 'text-sky-700' : 'text-sky-300'
               }`}>
                 Sea to Kitchen
