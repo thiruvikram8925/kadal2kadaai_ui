@@ -64,13 +64,13 @@ export default function Navigation({
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 flex items-center ${
           isNavbarWhite
-            ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-3'
-            : 'bg-transparent py-5'
+            ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 h-16'
+            : 'bg-transparent h-20'
         }`}
       >
-        <div id="nav-container" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div id="nav-container" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between w-full">
           
           {/* Logo */}
           <button
@@ -79,16 +79,18 @@ export default function Navigation({
               onPageChange('home');
               onNavigate('home');
             }}
-            className="flex items-center gap-3 sm:gap-4 group cursor-pointer text-left"
+            className="flex items-center group cursor-pointer text-left relative h-12"
           >
-            <Logo className={`${isNavbarWhite ? 'h-24 w-24' : 'h-28 w-28 sm:h-32 sm:w-32'} shrink-0`} />
-            <div className="flex flex-col justify-center font-sans">
-              <span className={`font-serif text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight block uppercase ${
+            <Logo className={`${isNavbarWhite ? 'h-20 w-20' : 'h-24 w-24 sm:h-28 sm:w-28'} shrink-0 absolute left-0 top-1/2 -translate-y-1/2 z-10 shadow-md`} />
+            <div className={`flex flex-col justify-center font-sans transition-all duration-300 ${
+              isNavbarWhite ? 'pl-24' : 'pl-28 sm:pl-32'
+            }`}>
+              <span className={`font-serif text-lg sm:text-xl lg:text-2xl font-extrabold tracking-tight block uppercase ${
                 isNavbarWhite ? 'text-slate-900' : 'text-white'
               }`}>
                 Kadal 2 Kadaai
               </span>
-              <span className={`text-[9px] sm:text-[10px] tracking-widest uppercase block font-bold ${
+              <span className={`text-[8px] sm:text-[9px] tracking-widest uppercase block font-bold ${
                 isNavbarWhite ? 'text-sky-700' : 'text-sky-300'
               }`}>
                 Sea to Kitchen
