@@ -259,29 +259,8 @@ export default function Hero({ onShopClick, onExploreClick }: HeroProps) {
 
       </div>
 
-      {/* Premium organic layered wave gradient transition at the bottom */}
-      <div className="absolute bottom-0 left-0 right-0 w-full z-10 pointer-events-none select-none overflow-hidden leading-[0]">
-        <svg
-          viewBox="0 0 1440 120"
-          className="relative block w-full h-12 sm:h-20 md:h-24 lg:h-32"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            {/* Solid gradient transition from blackblue (#03045E) to light blue (#90E0EF) */}
-            <linearGradient id="hero-transition-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#03045E" stopOpacity="1.0" />
-              <stop offset="100%" stopColor="#90E0EF" stopOpacity="1.0" />
-            </linearGradient>
-          </defs>
-
-          {/* Main organic flowing foreground wave - 100% opaque to block background image and remove blur */}
-          <path
-            d="M0,60 C240,90 480,45 720,75 C960,105 1200,75 1440,60 L1440,120 L0,120 Z"
-            fill="url(#hero-transition-grad)"
-          />
-        </svg>
-      </div>
+      {/* Smooth, premium transition gradient to merge the Hero and TopSelling sections seamlessly without any hard lines or edges */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-b from-transparent via-[#03045E]/80 to-[#90E0EF] z-10 pointer-events-none" />
 
     </section>
   );
