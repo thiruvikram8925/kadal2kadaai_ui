@@ -70,7 +70,7 @@ export default function Hero({ onShopClick, onExploreClick }: HeroProps) {
   };
 
   return (
-    <section id="home" className="relative w-full min-h-[70vh] py-16 md:py-20 flex items-center justify-center overflow-hidden bg-slate-900 select-none">
+    <section id="home" className="relative w-full min-h-[70vh] pt-16 pb-24 md:pt-20 md:pb-32 flex items-center justify-center overflow-hidden bg-slate-900 select-none">
       
       {/* Background Image with slow Ken Burns Zoom Effect */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -257,6 +257,47 @@ export default function Hero({ onShopClick, onExploreClick }: HeroProps) {
           </div>
         </motion.div>
 
+      </div>
+
+      {/* Premium organic layered wave gradient transition at the bottom */}
+      <div className="absolute bottom-0 left-0 right-0 w-full z-10 pointer-events-none select-none overflow-hidden leading-[0]">
+        <svg
+          viewBox="0 0 1440 120"
+          className="relative block w-full h-12 sm:h-20 md:h-24 lg:h-32"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            {/* Multi-stop gradient blending from deep ocean blue (#03045E) via medium blue (#0077B6) and light blue (#90E0EF) to next section background (#F8FBFD) */}
+            <linearGradient id="hero-transition-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#03045E" stopOpacity="0" />
+              <stop offset="25%" stopColor="#03045E" stopOpacity="0.85" />
+              <stop offset="55%" stopColor="#0077B6" stopOpacity="0.9" />
+              <stop offset="80%" stopColor="#90E0EF" stopOpacity="0.95" />
+              <stop offset="100%" stopColor="#F8FBFD" stopOpacity="1.0" />
+            </linearGradient>
+            
+            {/* Back wave gradient for soft depth */}
+            <linearGradient id="hero-back-wave-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#0077B6" stopOpacity="0" />
+              <stop offset="50%" stopColor="#0077B6" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#90E0EF" stopOpacity="0.6" />
+            </linearGradient>
+          </defs>
+
+          {/* Layer 1: Softer background wave for depth */}
+          <path
+            d="M0,90 C360,110 720,75 1080,90 C1260,98 1380,105 1440,105 L1440,120 L0,120 Z"
+            fill="url(#hero-back-wave-grad)"
+            className="opacity-40"
+          />
+
+          {/* Layer 2: Main organic flowing foreground wave */}
+          <path
+            d="M0,60 C240,90 480,45 720,75 C960,105 1200,75 1440,60 L1440,120 L0,120 Z"
+            fill="url(#hero-transition-grad)"
+          />
+        </svg>
       </div>
 
     </section>

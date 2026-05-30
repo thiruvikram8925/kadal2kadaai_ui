@@ -75,7 +75,7 @@ export default function TopSellingSection({
   };
 
   return (
-    <section id="top-selling" className="py-10 sm:py-12 bg-[#F8FBFD] border-t border-b border-slate-100 overflow-hidden relative">
+    <section id="top-selling" className="py-10 sm:py-12 bg-[#F8FBFD] border-b border-slate-100 overflow-hidden relative">
       {/* Background Subtle Watermark Rings */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
