@@ -13,10 +13,9 @@ import TopSellingSection from './components/TopSellingSection';
 import TodayPurchaseSection from './components/TodayPurchaseSection';
 import CatchProductGrid from './components/CatchProductGrid';
 import WhyChooseUs from './components/WhyChooseUs';
-import ProductDetailSection from './components/ProductDetailSection';
+import ProductDetailModal from './components/ProductDetailModal';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
-import { useRef } from 'react';
 import CartDrawer from './components/CartDrawer';
 import WishlistDrawer from './components/WishlistDrawer';
 import { motion, AnimatePresence } from 'motion/react';
@@ -38,17 +37,6 @@ export default function App() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
-
-  const detailsRef = useRef<HTMLDivElement>(null);
-
-  // Smooth scroll to product details when selected
-  useEffect(() => {
-    if (selectedProduct) {
-      setTimeout(() => {
-        detailsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 120);
-    }
-  }, [selectedProduct]);
 
   // Simulated Checkout Wizard States
   const [checkoutStep, setCheckoutStep] = useState<null | 'shipping' | 'payment' | 'completed'>(null);
@@ -270,30 +258,6 @@ export default function App() {
               onSelectProduct={setSelectedProduct}
             />
 
-            {/* Inline Scroll-down Product Details Section */}
-            <div ref={currentPage === 'home' ? detailsRef : null}>
-              <AnimatePresence>
-                {selectedProduct && currentPage === 'home' && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.35, ease: 'easeInOut' }}
-                    className="overflow-hidden"
-                  >
-                    <ProductDetailSection
-                      product={selectedProduct}
-                      onClose={() => setSelectedProduct(null)}
-                      wishlist={wishlist}
-                      onToggleWishlist={handleToggleWishlist}
-                      onAddToCart={handleAddToCart}
-                      onSelectProduct={setSelectedProduct}
-                    />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
             {/* Why Thousands families trust us */}
             <WhyChooseUs />
 
@@ -319,30 +283,6 @@ export default function App() {
               setSelectedCategory={setSelectedCategory}
               searchTerm={globalSearchTerm}
             />
-
-            {/* Inline Scroll-down Product Details Section */}
-            <div ref={currentPage === 'market' ? detailsRef : null}>
-              <AnimatePresence>
-                {selectedProduct && currentPage === 'market' && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.35, ease: 'easeInOut' }}
-                    className="overflow-hidden"
-                  >
-                    <ProductDetailSection
-                      product={selectedProduct}
-                      onClose={() => setSelectedProduct(null)}
-                      wishlist={wishlist}
-                      onToggleWishlist={handleToggleWishlist}
-                      onAddToCart={handleAddToCart}
-                      onSelectProduct={setSelectedProduct}
-                    />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -374,7 +314,15 @@ export default function App() {
         onShopNow={() => handleNavigate('fresh-catch')}
       />
 
-      {/* Product details modal removed (now inline scroll-down section) */}
+      {/* Product Information Detail overlay modal pops-up */}
+      <ProductDetailModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+        wishlist={wishlist}
+        onToggleWishlist={handleToggleWishlist}
+        onAddToCart={handleAddToCart}
+        onSelectProduct={setSelectedProduct}
+      />
 
       {/* Simulated 3-Step Checkout Wizard Modal Overlay */}
       <AnimatePresence>
