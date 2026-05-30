@@ -89,10 +89,9 @@ export default function Hero({ onShopClick, onExploreClick }: HeroProps) {
             backgroundPosition: '50% 55%'
           }}
         />
-        {/* Layered Gradient Overlay: Dark navy bottom to dark transparent top with requested background tint */}
+        {/* Layered Gradient Overlay: slightly white -> lightblue -> slightly darker */}
         <div
-          className="absolute inset-0 bg-gradient-to-t from-[#03045E]/95 via-[#03045E]/40 to-transparent z-10 opacity-80"
-          style={{ backgroundColor: '#66b6c1' }}
+          className="absolute inset-0 bg-gradient-to-b from-white/20 via-[#0077B6]/75 to-[#03045E]/95 z-10 opacity-90"
         />
       </div>
 

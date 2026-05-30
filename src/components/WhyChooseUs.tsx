@@ -15,7 +15,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section id="why-choose-us" className="py-10 sm:py-12 bg-slate-50 relative overflow-hidden select-none">
+    <section id="why-choose-us" className="py-10 sm:py-12 bg-white relative overflow-hidden select-none">
       
       {/* Wave Decorative Background (CSS Only) */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180 opacity-5">
