@@ -368,9 +368,7 @@ export default function Navigation({
                 >
                   <X className="h-4 w-4" />
                 </button>
-                <div className="p-3 bg-[#0077B6] text-white rounded-2xl mb-3 shadow-md">
-                  <Anchor className="h-6 w-6" />
-                </div>
+                <Logo className="h-20 w-20 mb-3 shadow-lg" />
                 <h3 className="font-serif text-2xl font-bold tracking-tight text-center">Join Kadal 2 Kadaai</h3>
                 <p className="text-xs text-sky-200 mt-1 text-center font-sans">Authentic coastal fresh seafood straight to your home</p>
               </div>
