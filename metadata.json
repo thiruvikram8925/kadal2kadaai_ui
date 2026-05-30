@@ -1,0 +1,6 @@
+{
+  "name": "Kadal 2 Kadaai",
+  "description": "Premium South Indian coastal seafood marketplace sourced directly from trusted fishermen.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
