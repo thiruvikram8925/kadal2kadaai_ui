@@ -81,7 +81,7 @@ export default function Navigation({
             }}
             className="flex items-center group cursor-pointer text-left relative h-12"
           >
-            <Logo className={`${isNavbarWhite ? 'h-20 w-20' : 'h-24 w-24 sm:h-28 sm:w-28'} shrink-0 absolute left-0 top-1/2 -translate-y-1/2 z-10 shadow-md`} />
+            <Logo className={`${isNavbarWhite ? 'h-20 w-20' : 'h-24 w-24 sm:h-28 sm:w-28'} shrink-0 absolute left-0 top-[55%] -translate-y-1/2 z-10 shadow-md`} />
             <div className={`flex flex-col justify-center font-sans transition-all duration-300 ${
               isNavbarWhite ? 'pl-24' : 'pl-28 sm:pl-32'
             }`}>
