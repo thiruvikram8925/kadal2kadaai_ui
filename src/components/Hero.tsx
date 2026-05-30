@@ -274,7 +274,7 @@ export default function Hero({ onShopClick, onExploreClick }: HeroProps) {
               <stop offset="25%" stopColor="#03045E" stopOpacity="0.85" />
               <stop offset="55%" stopColor="#0077B6" stopOpacity="0.9" />
               <stop offset="80%" stopColor="#90E0EF" stopOpacity="0.95" />
-              <stop offset="100%" stopColor="#F8FBFD" stopOpacity="1.0" />
+              <stop offset="100%" stopColor="#CAF0F8" stopOpacity="1.0" />
             </linearGradient>
             
             {/* Back wave gradient for soft depth */}
