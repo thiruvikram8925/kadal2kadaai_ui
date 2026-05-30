@@ -153,16 +153,16 @@ export default function CatchProductGrid({
         </div>
 
         {/* Filter Pills Tab bar */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 scrollbar-none border-b border-slate-100">
+        <div className="flex items-center gap-3 overflow-x-auto pb-5 mb-10 scrollbar-none border-b border-slate-100">
           {filterPills.map((pill) => (
             <button
               key={pill.id}
               id={`filter-pill-${pill.id}`}
               onClick={() => setSelectedCategory(pill.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-wide cursor-pointer transition-all ${
+              className={`px-7 py-3 rounded-2xl text-sm sm:text-base md:text-lg font-extrabold tracking-wider cursor-pointer transition-all duration-300 ${
                 selectedCategory === pill.id
-                  ? 'bg-[#0077B6] text-white shadow-md shadow-sky-900/10 scale-102'
-                  : 'bg-slate-50 hover:bg-slate-100 text-slate-600'
+                  ? 'bg-[#0077B6] text-white shadow-lg shadow-sky-900/10 scale-105'
+                  : 'bg-slate-50 hover:bg-slate-100 text-slate-600 hover:shadow-md'
               }`}
             >
               {pill.label}
