@@ -75,7 +75,7 @@ export default function TopSellingSection({
   };
 
   return (
-    <section id="top-selling" className="py-10 sm:py-12 bg-gradient-to-b from-[#90E0EF] to-white border-b border-slate-100 overflow-hidden relative">
+    <section id="top-selling" className="py-10 sm:py-12 bg-[#F8FBFD] border-t border-b border-slate-100 overflow-hidden relative">
       {/* Background Subtle Watermark Rings */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -103,8 +103,8 @@ export default function TopSellingSection({
         {/* Endless Moving Carousel Belt Wrapper */}
         <div className="relative w-full overflow-hidden pause-marquee -mx-4 sm:mx-0">
           {/* Subtle fade-out gradients on left/right edges for premium visual blending */}
-          <div className="absolute top-0 bottom-0 left-0 w-8 sm:w-20 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
-          <div className="absolute top-0 bottom-0 right-0 w-8 sm:w-20 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 left-0 w-8 sm:w-20 bg-gradient-to-r from-[#F8FBFD] to-transparent z-20 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 right-0 w-8 sm:w-20 bg-gradient-to-l from-[#F8FBFD] to-transparent z-20 pointer-events-none" />
 
           {/* Scrolling Marquee Container */}
           <div className="animate-marquee-left flex gap-6 py-4 px-4 sm:px-0">

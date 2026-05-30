@@ -70,7 +70,7 @@ export default function Hero({ onShopClick, onExploreClick }: HeroProps) {
   };
 
   return (
-    <section id="home" className="relative w-full min-h-[70vh] pt-16 pb-24 md:pt-20 md:pb-32 flex items-center justify-center overflow-hidden bg-slate-900 select-none">
+    <section id="home" className="relative w-full min-h-[70vh] py-16 md:py-20 flex items-center justify-center overflow-hidden bg-slate-900 select-none">
       
       {/* Background Image with slow Ken Burns Zoom Effect */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -89,9 +89,10 @@ export default function Hero({ onShopClick, onExploreClick }: HeroProps) {
             backgroundPosition: '50% 55%'
           }}
         />
-        {/* Layered Gradient Overlay: slightly white -> lightblue -> slightly darker */}
+        {/* Layered Gradient Overlay: Dark navy bottom to dark transparent top with requested background tint */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-white/20 via-[#0077B6]/75 to-[#03045E]/95 z-10 opacity-90"
+          className="absolute inset-0 bg-gradient-to-t from-[#03045E]/95 via-[#03045E]/40 to-transparent z-10 opacity-80"
+          style={{ backgroundColor: '#66b6c1' }}
         />
       </div>
 
@@ -257,9 +258,6 @@ export default function Hero({ onShopClick, onExploreClick }: HeroProps) {
         </motion.div>
 
       </div>
-
-      {/* Smooth, premium transition gradient to merge the Hero and TopSelling sections seamlessly without any hard lines or edges */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 md:h-48 bg-gradient-to-b from-transparent via-[#03045E]/80 to-[#90E0EF] z-10 pointer-events-none" />
 
     </section>
   );
